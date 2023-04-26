@@ -1,0 +1,84 @@
+<%- include('elements/_header') %>
+
+
+    <section style="align-items: center;">
+        <div class="container heading-container" >
+            <div class="row">
+                <div class="column">
+                    <h1>Students</h1>
+                </div>
+            </div>
+            
+            
+            
+        <div class="createnew-btn" >
+            <a class="btn btn-primary m-3" href="/createStudent" role="button">Create New<span class="text-gradient"> <i class="fa-solid fa-user"></i></span></a>
+            
+
+    </section>
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <% if (message){ %>
+                        <div class="alert alert-success alert-dismissible fade show alert-<%= message.type %>" role="alert">
+                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-lablel="close"></button>
+                        
+                    <strong><%= message.message %></strong>
+                    </div> <% } %>
+                        
+                        
+                     
+                    <div class="table-responsive table">
+    
+                        <% if (student != '') { %>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr class="table-primary">
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Contact</th>
+                                 </tr>
+                                </thead>
+                                <tbody>
+                                
+                                   <%  for(var i = 0; i<student.length; i++){ %>
+                                    <tr>
+                                        <td><%= student[i].student_id %></td>  
+                                        <td><%= student[i].name %></td>
+                                        <td><%= student[i].address %></td>
+                                        <td><%= student[i].contact %></td>
+                                        <td>
+                                            <form method="POST" action="/update-student/<%= student[i]._id%>?_method=UPDATE">
+                                                <button type="submit"><i class="fas fa-edit fa-lg mx-1 btn"></i></button>
+                                                
+                                              </form>
+                                            </td>
+                            
+                                            <td>
+                                            <form method="POST" action="/delete-student/<%= student[i]._id %>?_method=DELETE">
+                                                <button type="submit"> <i class="fa-sharp fa-solid fa-trash btn" style="color:red"></i></button>
+                                               
+                                              </form>
+                                            
+                                            </td>
+                                    </tr>
+                                   <% } %>
+                                </tbody>
+                            </table>
+                        <% } else {%>
+                            <h2 class="text-center text-secondary mt-3"> No students</h2>
+    
+                            <% } %>
+                        
+    
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('elements/_footer') %> 

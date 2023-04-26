@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabith</title>
+    <script src="https://kit.fontawesome.com/d19bbcd6e9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="main-sect">
+        <div class="main-two">
+            <div class="side-nav">
+                <h1>Student Management System</h1>
+                <nav>
+                    <li class="side-list-main">
+                        <ul class="side-list-item"><a href="#"><i style="color: purple;" class="fa-solid fa-house"></i>Dashboard</a></ul>
+                        <ul class="side-list-item"><a href="#"><i style="color: rgb(244, 139, 47);" class="fa-solid fa-table"></i>Tables</a></ul>
+                        <ul class="side-list-item"><a href="#"><i style="color: rgb(0, 128, 98);" class="fa-solid fa-calendar-days"></i>Reservations</a></ul>
+                        <ul class="side-list-item"><a href="#"><i class="fa-solid fa-user"></i>Profile</a></ul>
+                        <ul class="side-list-item"><a href="#"><i class="fa-solid fa-bars"></i>Accomodation</a></ul>
+                        <ul class="side-list-item"><a href="#"><i class="fa-solid fa-bars"></i>Transportation</a></ul>
+                        <ul class="side-list-item"><a href="#"><i class="fa-solid fa-bars"></i>Leisure Activities</a></ul>
+                        <ul class="side-list-item"><a href="#"><i class="fa-solid fa-bars"></i>Food</a></ul>
+                    </li>
+                </nav>
+            </div>
+
+            <div class="topnav">
+                <a href="#" class="active">Student Management System</a>
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+                <!-- Navigation links (hidden by default) -->
+    
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" id="menuicon" class="icon" onclick="myFunction()">
+                  <i id="menubar" class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="minilinks" id="myLinks">
+                <a href="#"><i class="fa-solid fa-user"></i> Sign In</a>
+                <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Type here..." required></div>
+                <a href="#home"><i style="color: purple;" class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="#aboutus"><i style="color: rgb(244, 139, 47);" class="fa-solid fa-table"></i> Tables</a>
+                <a href="#ourprod"><i style="color: rgb(0, 128, 98);" class="fa-solid fa-calendar-days"></i> Reservations</a>
+                <a href="#contact"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="#contact"><i class="fa-solid fa-bars"></i> Accomodation</a>
+                <a href="#contact"><i class="fa-solid fa-bars"></i> Transportation</a>
+                <a href="#contact"><i class="fa-solid fa-bars"></i> Leisure Activities</a>
+                <a href="#contact"><i class="fa-solid fa-bars"></i> Food</a>
+            </div>
+
+            <div class="main-cont">
+                <nav class="main-nav">
+                    <div class="nav-title">
+                        <div class="nav-little">
+                            <a href="#">Page</a>
+                            <span>/</span>
+                            <a href="index.html">Dashboard</a>
+                            <span>/</span>
+                            <a href="student.html">Student</a>
+                            <span>/</span>
+                            <a href="create.html">Add Student</a>
+                        </div>
+                        <h1>Add Student</h1>
+                    </div>
+                    <div class="nav-items">
+                        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Type here..." required></div>
+                        <a href="#"><i class="fa-solid fa-user"></i> Sign In</a>
+                        <a href="#"><i class="fa-solid fa-gear"></i></a>
+                        <a href="#"><i class="fa-solid fa-bell"></i></a>
+                    </div>
+                </nav>
+            
+                <div class="form-main">
+                    <h1>Add New Student</h1>
+                    <div class="form-box">
+                        <label for="title">Title</label>
+                        <input id="title" type="text" placeholder="Enter title">
+                        <label for="description">Description</label>
+                        <input id="description" type="text" placeholder="Enter Description">
+                        <label for="other-desc">Other Description</label>
+                        <input id="other-desc" type="text" placeholder="Enter Other Description">
+                        <label for="price">Price</label>
+                        <input id="price" type="text" placeholder="Enter Price">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="text" placeholder="Enter Phone">
+                        <label for="something">Something</label>
+                        <input id="something" type="text" placeholder="Enter something">
+                        <label for="anotherthing">Another thing</label>
+                        <input id="anotherthing" type="text" placeholder="Enter another thing">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

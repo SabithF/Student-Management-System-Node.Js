@@ -1,0 +1,531 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.main-sect{
+    background: linear-gradient(180deg, #5e72e3 60%, white 60%);
+    height: 100vh;
+}
+
+.main-two{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.side-nav{
+    width: 20%;
+    height: 90vh;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.2);
+
+}
+
+.side-nav h1{
+    font-size: 15px;
+    padding: 30px 20px;
+    border-bottom: 1px solid rgb(222, 222, 222);
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.side-list-main{
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.side-list-item{
+    font-size: .9rem;
+    border-bottom: 1px solid rgb(222, 222, 222);
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.side-list-item a{
+    padding: 20px 30px;
+    display: block;
+    width: 100%;
+    color: rgb(39, 39, 39);
+}
+
+.side-list-item a i{
+    margin-right: 20px;
+}
+
+.side-list-item:hover{
+    background-color: rgb(246, 246, 246);
+    cursor: pointer;
+}   
+
+
+/* MAIN DASHBOARD */
+
+.main-cont{
+    width: 80%;
+}
+
+.main-nav{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-title{
+    padding: 20px;
+}
+
+.nav-title h1{
+    color: white;
+    font-size: 20px;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.nav-little{
+    color: white;
+    font-size: .7rem;
+    padding-bottom: 5px;
+}
+
+.nav-little a{
+    color: white;
+}
+
+.nav-items{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box{
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.search-box i{
+    font-size: 12px;
+    padding: 0 5px 0 10px;
+}
+
+.nav-items input{
+    padding: 5px;
+    border-radius: 8px;
+    outline: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.nav-items input::placeholder{
+    color: rgb(131, 131, 131);
+}
+
+.nav-items input:focus{
+    outline: none;
+}
+
+.nav-items a{
+    padding: 10px;
+    color: white;
+}
+
+
+
+/* card styling */
+
+.main-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+.each-card{
+    margin: 30px 10px;
+    width: 30%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card-title{
+    padding: 0 20px;
+}
+
+.card-title h5{
+    font-size: .6rem;
+    margin-bottom: 2px;
+    color: #7a7a7a;
+}
+
+
+.each-card i{
+    margin: 15px 20px;
+    color: white;
+    background-color: #5e72e3;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+/* Graph Content */
+
+.main-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.graph{
+    width: 60%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+.graph-content img{
+    width: 100%;
+}
+
+.hg-banner{
+    width: 30%;
+    background-image: url("https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2019/03/GettyImages-938335974_275998721_459841052-920x614.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 30px;
+    box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.2);
+}
+
+.hg-content{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.hg-content h2{
+    color: white;
+    font-size: 10px;
+}
+
+.hg-content p{
+    color: white;
+    font-size: 8px;
+}
+
+
+/* HAMBURGER MENU */
+
+.topnav{
+    display: none;
+}
+
+.minilinks{
+    display: none;
+}
+
+.maxlinks{
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Style the navigation menu */
+
+    
+
+    .topnav {
+        width: 100%;
+        height: 70px;
+        overflow: hidden;
+        background-color: white;
+        position: relative;
+        display: flex;
+        z-index: 999;
+    }
+    
+    .social-mobile{
+        padding: 0;
+    }
+
+    .social-mobile i{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* Hide the links inside the navigation menu (except for logo/home) */
+
+    .minilinks{
+        display: block;
+        position: absolute;
+        transition: 0.5s;
+        transform: translate(0px, -300px);
+        z-index: 998;
+        width: 100%;
+    }
+
+    .minilinks a{
+        color: black;
+        background-color: white;
+        padding: 5px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+        border-bottom: 1px solid rgb(239, 239, 239);
+        transition: 1s;
+    }
+
+    .maxlinks{
+        display: block;
+        position: absolute;
+        opacity: 1;
+        transition: 0.5s;
+        transform: translate(0px, 70px);
+        width: 100%;
+    }
+
+    .maxlinks a{
+        color: black;
+        background-color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+        border-bottom: 1px solid rgb(239, 239, 239);
+        transition: 1s;
+    }
+
+    .search-box{
+        height: 50px;
+        display: flex;
+        justify-content: left;
+        align-items: center ;
+        border-radius: 0;
+        background-color: white;
+    }
+        
+    .search-box i{
+        font-size: 12px;
+        padding: 0 5px 0 10px;
+    }
+
+    .search-box input{
+        padding: 5px;
+        border-radius: 8px;
+        outline: none;
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+    
+    .search-box input::placeholder{
+        color: rgb(131, 131, 131);
+    }
+    
+    .search-box input:focus{
+        outline: none;
+    }
+
+    /* Style navigation menu links */
+    .topnav a {
+        margin-top: 10px;
+        color: black;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    /* Style the hamburger menu */
+    .topnav a.icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .icon-rot i{
+        rotate: 90deg;
+        transition: 0.5s ease-in-out;
+    }
+
+    .fa-x{
+        rotate: -90deg;
+    }
+
+
+    /* Add a grey background color on mouse-over */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Style the active link (or home/logo) */
+    .active {
+        height: 10vh;
+        color: white;
+    }
+
+    .small-logo{
+        width: 150px;
+        margin-right: 20px;
+    }
+
+}
+
+  /* HAMBURGER MENU END */
+
+
+/* Table CSS */
+
+.table-main{
+    width: 90%;
+    margin: auto;
+    background-color: white ;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.create-btn{
+    background-color: #5e72e3;
+    color: white;
+    padding: 5px 10px;
+    display: block;
+    width: 140px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* FORM Style */
+
+.form-main{
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.2);
+}
+
+.form-main h1{
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #c06666;
+}
+
+.form-main label{
+    display: block;
+}
+
+.form-main input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-box{
+    padding: 5px;
+}
+
+
+/* GENERAL MOBILE CSS */
+
+@media only screen and (max-width: 767px) {
+
+    .main-sect{
+        background: linear-gradient(180deg, #5e72e3 60%, white 60%);
+        height: auto;
+    }
+    
+    .main-two{
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .side-nav{
+        display: none;
+    }
+
+    .main-two{
+        flex-direction: column;
+    }
+
+    .main-nav{
+        display: none;
+    }
+
+    /* Card */
+
+    .main-cont{
+        width: 90%;
+        margin: auto;
+    }
+
+    .main-cards{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .each-card{
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .main-info{
+        flex-direction: column;
+    }
+
+    .graph{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .hg-banner{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .table-main{
+        width: 100%;
+    }
+
+    .form-main{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+
+}
+
