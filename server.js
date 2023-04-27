@@ -21,6 +21,7 @@ connectDB();
 
 
 // app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true}));
 
 // set view engine "ejs"/ "HTML"
 app.set("view engine","ejs");

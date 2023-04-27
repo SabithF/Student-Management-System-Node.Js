@@ -1,0 +1,70 @@
+<%- include('elements/_header') %>
+
+
+    <section style="align-items: center;">
+        <div class="container heading-container" >
+            <div class="row">
+                <div class="column">
+                    <h1>Registration</h1>
+                </div>
+            </div>
+            
+            
+            
+        <div class="createnew-btn" >
+            <a class="btn btn-primary m-3" href="/createRegistration" role="button">Create New<span class="text-gradient"> <i class="fa-solid fa-user"></i></span></a>
+            <div class="createnew-btn" >
+                <a class="btn btn-primary m-3" href="/" role="button">Home<span class="text-gradient"> <i class="fa-solid fa-home"></i></span></a>
+                
+
+    </section>
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                        
+                     
+                    <div class="table-responsive table">
+    
+                        <% if (student != '') { %>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr class="table-primary">
+                                        <th>Student ID</th>
+                                        <th>Student Name</th>
+                                        <th>Registered Program</th>
+                                       
+                                 </tr>
+                                </thead>
+                                <tbody>
+                                
+                                   <%  for(var i = 0; i<student.length; i++){ %>
+                                    <tr>
+                                        <td><%= student[i].id %></td>  
+                                        <td><%= student[i].name %></td>
+                                        <td><% student.registeredPrograms.forEach(function(programId) { %>
+                                            <%= programId %><br>
+                                          <% }) %></td>
+                                        
+                                        
+                            
+                                    </tr>
+                                   <% } %>
+                                </tbody>
+                            </table>
+                        <% } else {%>
+                            <h2 class="text-center text-secondary mt-3"> No Registrations</h2>
+    
+                            <% } %>
+                        
+    
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('elements/_footer') %> 

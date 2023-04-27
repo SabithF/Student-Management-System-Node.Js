@@ -101,7 +101,7 @@ route.post('/add-student', async (req, res)=> {
 
 route.post('/add-program', async (req, res)=> {
     const program = new Program ({
-        name: req.body.pname,
+        pname: req.body.pname,
         duration: req.body.duration,
         cost: req.body.cost,
         programid: req.body.programid,
@@ -113,6 +113,7 @@ route.post('/add-program', async (req, res)=> {
         //     message: 'Program created succcessfully'
         // };
         res.redirect('dashboard/program')
+        console.log("Program",program);
     })
     .catch(err=>{
         const error = err;
@@ -150,7 +151,7 @@ route.patch('/students/:studentid', async (req, res) => {
       if (!program) {
         return res.sendStatus(404);
       }
-      program.name = req.body.pname;
+      program.pname = req.body.pname;
       program.address = req.body.address;
       program.contact = req.body.contact;
       program.programid = req.body.programid;
@@ -188,11 +189,14 @@ route.get('/createstudent', (req, res) =>{
 route.get('/createprogram', (req, res) =>{
     res.render('createProgram', {title: 'Create Program'} )
 })
+route.get('/register', (req, res) =>{
+    res.render('registration', {title: 'Registered'} )
+})
 
 
 // Register student for a program
 route.post('/register-program', async (req, res) => {
-    const studentId = req.body.studentId; student
+    const studentId = req.body.studentId; 
     const programId = req.body.programId;
 
     try {

@@ -1,0 +1,32 @@
+<%- include('elements/_header') %>
+
+<div class="container form-container">
+    <div class="row">
+        <div class="col-md-5 mx-auto mt-3">
+            <div class="card shadow">
+                <div class="card-header bg-primary">
+                    <h3 class="text-light">
+                        Add new Program
+                    </h3>
+                </div>
+                <div class="card-body  p-2">
+                    <!-- route name -->
+                    <form action="/register-program" method="post">
+                        <div>
+                          <label for="studentId">Student ID:</label>
+                          <input type="text" name="studentId" id="studentId" required/>
+                        </div>
+                        <div>
+                          <label for="programId">Program ID:</label>
+                          <input type="text" name="programId" id="programId" required/>
+                        </div>
+                        <button type="submit">Register</button>
+                      </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<%- include('elements/_footer') %> 
