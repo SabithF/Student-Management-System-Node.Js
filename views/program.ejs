@@ -2,63 +2,7 @@
 
 
 
-    <style>
-       /* Color of the links BEFORE scroll */
- .navbar-scroll .nav-link,
- .navbar-scroll .navbar-toggler-icon,
- .navbar-scroll .navbar-brand {
-   color: #fff;
- }
-
- .form-container{
-  color: #ff0000;
- }
-
- .body{
-  font-family: poppins;
- }
-
- .navbar{
-    position: relative;
     
- }
-
- h2{
-    color: aqua;
- }
-
- .nav-item{
-    font-weight: 800;
-    color: tomato;
-
- }
- .heading-container{
-color: blue;
- }
- /* Color of the links AFTER scroll */
- .navbar-scrolled .nav-link,
- .navbar-scrolled .navbar-toggler-icon,
- .navbar-scrolled .navbar-brand {
-   color: #fff;
- }
- 
- /* Color of the navbar AFTER scroll */
- .navbar-scroll,
- .navbar-scrolled {
-   background-color: #cbbcb1;
- }
- 
- .mask-custom {
-   backdrop-filter: blur(5px);
-   background-color: rgba(255, 255, 255, .15);
- }
- 
- .navbar-brand {
-   font-size: 1.75rem;
-   letter-spacing: 3px;
-   
- }
-    </style>
 </head>
 <body>
     <section style="align-items: center;">
@@ -76,17 +20,9 @@ color: blue;
             
 
     </section>
-    
+
     <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <% if (message){ %>
-                        <div class="alert alert-success alert-dismissible fade show alert-<%= message.type %>" role="alert">
-                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-lablel="close"></button>
-                        
-                    <strong><%= message.message %></strong>
-                    </div> <% } %>
+        
                         
                         
                      
@@ -98,18 +34,20 @@ color: blue;
                                     <tr class="table-primary">
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Address</th>
-                                        <th>Contact</th>
+                                        <th>Duration</th>
+                                        <th>Cost</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                  </tr>
                                 </thead>
                                 <tbody>
                                 
                                    <%  for(var i = 0; i<program.length; i++){ %>
                                     <tr>
-                                        <td><%= program[i].student_id %></td>  
-                                        <td><%= program[i].name %></td>
-                                        <td><%= program[i].address %></td>
-                                        <td><%= program[i].contact %></td>
+                                        <td><%= program[i].programid %></td>  
+                                        <td><%= program[i].pname %></td>
+                                        <td><%= program[i].duration %></td>
+                                        <td><%= program[i].cost %></td>
                                         <td>
                                             <form method="POST" action="/update-program/<%= program[i]._id%>?_method=UPDATE">
                                                 <button type="submit"><i class="fas fa-edit fa-lg mx-1 btn"></i></button>

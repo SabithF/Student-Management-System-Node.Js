@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const ProgramModel = new Schema ({
-    name: {
+    pname: {
         type: String,
         required: true
       },
@@ -15,13 +15,14 @@ const ProgramModel = new Schema ({
         type: String,
         required: true
       },
-      program_id: {
+      programid: {
         type: String,
         required: true,
         unique: true
       }
-}, {collection: 'Student'}, {timstamps: true}
+}, {collection: 'Program'}
 );
 
 
-module.exports = mongoose.model('Program', ProgramModel);
+const Program = mongoose.model('Program', ProgramModel);
+module.exports = Program;

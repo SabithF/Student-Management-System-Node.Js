@@ -12,14 +12,16 @@ const StudentModel = new Schema ({
       contact: {
         type: String,
       },
-      student_id: {
+      studentid: {
         type: String,
         
+        required: true,
         unique: true
       }
 }, {collection: 'Student'}
 );
 
 
-module.exports = mongoose.model('Student', StudentModel);
+const Student = mongoose.model('Student', StudentModel);
+module.exports = Student;
 

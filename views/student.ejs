@@ -21,13 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <% if (message){ %>
-                        <div class="alert alert-success alert-dismissible fade show alert-<%= message.type %>" role="alert">
-                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-lablel="close"></button>
-                        
-                    <strong><%= message.message %></strong>
-                    </div> <% } %>
-                        
+                    
                         
                      
                     <div class="table-responsive table">
@@ -40,13 +34,15 @@
                                         <th>Name</th>
                                         <th>Address</th>
                                         <th>Contact</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                  </tr>
                                 </thead>
                                 <tbody>
                                 
                                    <%  for(var i = 0; i<student.length; i++){ %>
                                     <tr>
-                                        <td><%= student[i].student_id %></td>  
+                                        <td><%= student[i].studentid %></td>  
                                         <td><%= student[i].name %></td>
                                         <td><%= student[i].address %></td>
                                         <td><%= student[i].contact %></td>

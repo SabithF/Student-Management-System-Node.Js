@@ -8,7 +8,7 @@ const Program = require('../models/program');
  * @method GET
  */
 
-route.get('dashboard/student', async (req, res)=>{
+route.get('/dashboard/student', async (req, res)=>{
 // To fetch students by their ID
     if(req.query.id){
         const id = req.query.id;
@@ -36,7 +36,7 @@ route.get('dashboard/student', async (req, res)=>{
     }
 })
 
-route.get('dashboard/program', async (req, res)=>{
+route.get('/dashboard/program', async (req, res)=>{
 
     // To fetch program by its ID
     if(req.query.id){
@@ -75,16 +75,14 @@ route.post('/add-student', async (req, res)=> {
         name: req.body.name,
         address: req.body.address,
         contact: req.body.contact,
-        student_id: req.body.student_id,
+        studentid: req.body.studentid,
     });
     await student.save(student)
     .then(data=>{
-        req.session.message={
-            type: 'Success',
-            message: 'Program created succcessfully'
-        };
+
         
         res.redirect('dashboard/student')
+        console.log(student);
     })
     .catch(err=>{
         const error = err;
@@ -103,17 +101,17 @@ route.post('/add-student', async (req, res)=> {
 
 route.post('/add-program', async (req, res)=> {
     const program = new Program ({
-        name: req.body.name,
+        name: req.body.pname,
         duration: req.body.duration,
         cost: req.body.cost,
-        program_id: req.body.program_id,
+        programid: req.body.programid,
     });
     await program.save(program)
     .then(data=>{
-        req.session.message={
-            type: 'Success',
-            message: 'Program created succcessfully'
-        };
+        // req.session.message={
+        //     type: 'Success',
+        //     message: 'Program created succcessfully'
+        // };
         res.redirect('dashboard/program')
     })
     .catch(err=>{
@@ -128,16 +126,16 @@ route.post('/add-program', async (req, res)=> {
 // Update routes
 
 // Update a student by student ID
-app.patch('/students/:student_id', async (req, res) => {
+route.patch('/students/:studentid', async (req, res) => {
     try {
-      const student = await Student.findOne({ student_id: req.params.student_id });
+      const student = await Student.findOne({ studentid: req.params.studentidstudent });
       if (!student) {
         return res.sendStatus(404);
       }
       student.name = req.body.name;
       student.address = req.body.address;
       student.contact = req.body.contact;
-      student.student_id = req.body.student_id;
+      student.studentid = req.body.studentid;
       await student.save();
       res.send(student);
     } catch (error) {
@@ -146,16 +144,16 @@ app.patch('/students/:student_id', async (req, res) => {
     }
   });
 
-  app.patch('/program/:student_id', async (req, res) => {
+  route.patch('/program/:studentid', async (req, res) => {
     try {
-      const program = await Program.findOne({ program_id: req.params.program_id });
+      const program = await Program.findOne({ programid: req.params.programid });
       if (!program) {
         return res.sendStatus(404);
       }
-      program.name = req.body.name;
+      program.name = req.body.pname;
       program.address = req.body.address;
       program.contact = req.body.contact;
-      program.program_id = req.body.program_id;
+      program.programid = req.body.programid;
       await program.save();
       res.send(program);
     } catch (error) {
@@ -184,17 +182,17 @@ route.post('/delete-program/:id', (req, res)=>{
 })
 
 
-route.get('/create-student', (req, res) =>{
+route.get('/createstudent', (req, res) =>{
     res.render('createStudent', {title: 'Create Student'} )
 })
-route.get('/create-program', (req, res) =>{
+route.get('/createprogram', (req, res) =>{
     res.render('createProgram', {title: 'Create Program'} )
 })
 
 
 // Register student for a program
 route.post('/register-program', async (req, res) => {
-    const studentId = req.body.studentId; 
+    const studentId = req.body.studentId; student
     const programId = req.body.programId;
 
     try {
@@ -224,6 +222,10 @@ route.post('/register-program', async (req, res) => {
         res.status(500).json({ message: 'An error occurred while registering' });
     }
 });
+
+
+
+
 
 
 module.exports = route;  
