@@ -113,7 +113,7 @@ route.post('/add-program', async (req, res)=> {
         //     message: 'Program created succcessfully'
         // };
         res.redirect('dashboard/program')
-        console.log("Program",program);
+        console.log("Program", program);
     })
     .catch(err=>{
         const error = err;
@@ -190,7 +190,7 @@ route.get('/createprogram', (req, res) =>{
     res.render('createProgram', {title: 'Create Program'} )
 })
 route.get('/register', (req, res) =>{
-    res.render('registration', {title: 'Registered'} )
+    res.render('registration', {title: 'Registered', student:student} )
 })
 
 
